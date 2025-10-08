@@ -17,6 +17,7 @@ export const getUsuario = async (req, res) => {
         username, password
       ]);
       if (rows.length <= 0) {
+          console.log("Datos recibidos:", username, password);
         return res.status(404).json({ message: "Usuario no Encontrado" });
       }
       res.json({ message: "Encontrado" });
