@@ -1,8 +1,9 @@
 import express from 'express';
+import cors from 'cors';
 import marketRoutes from './routes/market.routes.js'
 
 const app=express()
-
+app.use(cors());
 // Middleware para procesar JSON
 app.use(express.json());
 
