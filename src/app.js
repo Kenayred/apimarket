@@ -1,15 +1,10 @@
 import express from 'express';
-import cors from 'cors';
 import marketRoutes from './routes/market.routes.js'
 
 const app=express()
 // Middleware para procesar JSON
 app.use(express.json());
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type'],
-}));
+
 // Middleware para procesar datos de formularios (opcional, si usas x-www-form-urlencoded)
 app.use(express.urlencoded({ extended: true }));
 
