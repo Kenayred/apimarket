@@ -13,6 +13,9 @@ export const getUsuarios=async(req,res)=>{
 export const getUsuario = async (req, res) => {
     try {
       const { username, password } = req.body;
+        console.log("Body recibido:", req.body);
+          console.log("Headers:", req.headers);
+          console.log("Método:", req.method);
         console.log("Datosss recibidos:", req.body);
       const [rows] = await pool.query("SELECT * FROM usuarios WHERE nombre = ? AND clave = ?", [
         username, password
