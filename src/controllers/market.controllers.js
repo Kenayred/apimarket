@@ -18,7 +18,7 @@ export const getUsuario = async (req, res) => {
       ]);
       if (rows.length <= 0) {
           console.log("Datos recibidos:", username, password);
-        return res.status(404).json({ message:username });
+        return res.status(404).json({ message:"Datos no encontrados" });
       }
       res.json({ message: "Encontrado" });
     } catch (error) {
