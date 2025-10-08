@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from "cors';
 import marketRoutes from './routes/market.routes.js'
 
 const app=express()
