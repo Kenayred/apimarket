@@ -12,12 +12,13 @@ export const getUsuarios=async(req,res)=>{
 
 export const getUsuario = async (req, res) => {
     try {
-      const { username, password } = req.body; 
+      const { username, password } = req.body;
+        console.log("Datosss recibidos:", username, password);
       const [rows] = await pool.query("SELECT * FROM usuarios WHERE nombre = ? AND clave = ?", [
         username, password
       ]);
       if (rows.length <= 0) {
-          console.log("Datos recibidos:", username, password);
+          
         return res.status(404).json({ message:"Datos no encontrados" });
       }
       res.json({ message: "Encontrado" });
