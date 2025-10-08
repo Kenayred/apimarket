@@ -2,6 +2,14 @@ import express from 'express';
 import marketRoutes from './routes/market.routes.js'
 
 const app=express()
+// En tu API (Node.js/Express)
+const cors = require('cors');
+
+app.use(cors({
+  origin: '*', // O especifica tu dominio
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 // Middleware para procesar JSON
 app.use(express.json());
 
